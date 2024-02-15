@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,12 @@
 <body>
     <script>
 
-        fetch("/api-todo", {
-            method : "POST"
+        fetch("/api-todo/crear", {
+            method : "POST",
+            body : '{ "algo" : "valido" }',
+            headers : {
+                "Content-type" : "application/json"
+            }
         })
         .then(respuesta => respuesta.text())
         .then(respuesta => console.log(respuesta));
