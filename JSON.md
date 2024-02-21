@@ -63,3 +63,25 @@ operación 2 ---> toggle estado
 respuesta: { error : error en servidor }
 respuesta: { error : error en la petición }
 respuesta: { error : not found }
+
+--------------------------------
+
+GET /api-todo ---> "método GET"
+POST /api-todo ---> "método POST"
+PUT /api-todo ---> "método PUT"
+DELETE /api-todo ---> "método DELETE"
+cualquier otra petición --> '{ error : "not found" }'
+
+
+
+
+
+.use((error,peticion,respuesta,siguiente) => {
+
+})
+
+
+
+400 --> bad request
+
+DELETE /api-todo/borrar/:id 

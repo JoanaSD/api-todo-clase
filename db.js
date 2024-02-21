@@ -70,5 +70,43 @@ function borrarTarea(id){
 
 }
 
+function actualizarEstado(id){
 
-module.exports = {getTareas, crearTarea, borrarTarea};
+    return new Promise(async (fulfill,reject) => {
+
+        let conexion = conectar();
+
+        try{
+            let {count} = await conexion `UPDATE tareas SET terminada = NOT terminada WHERE id = ${id}`;
+            conexion.end();
+            fulfill(count);
+
+        }catch(error){
+            reject({error : "error en la base de datos"});
+        }
+
+    });
+
+}
+
+function actualizarTexto(id,tarea){
+
+    return new Promise(async (fulfill,reject) => {
+
+        let conexion = conectar();
+
+        try{
+            let {count} = await conexion `UPDATE tareas SET tarea = NOT tarea = ${tarea} WHERE id = ${id}`;
+            conexion.end();
+            fulfill(count);
+
+        }catch(error){
+            reject({error : "error en la base de datos"});
+        }
+
+    });
+
+}
+
+
+module.exports = {getTareas, crearTarea, borrarTarea, actualizarEstado, actualizarTexto};
