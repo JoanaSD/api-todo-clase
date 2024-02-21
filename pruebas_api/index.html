@@ -10,12 +10,12 @@
 
         let tarea = "aprender React";
 
-        fetch("/api-todo/actualizar/4/1", {
-            method : "PUT"/*,
+        fetch("/api-todo/actualizar/5/1", {
+            method : "PUT",
             body : JSON.stringify({tarea}),
             headers : {
                 "Content-type" : "application/json"
-            }*/
+            }
         })
         .then(respuesta => respuesta.text())
         .then(respuesta => console.log(respuesta));
