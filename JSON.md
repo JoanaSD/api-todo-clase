@@ -32,6 +32,11 @@ TODOS los parámetros dinámicos de la URL, estrán en el objeto PARAMS de la pe
     c : "x"
 }
 
+
+params -----> :nombre-parametro
+
+params -----> :nombre-parametro(regex)
+
 --------------------
 
 API rest/restful --> representational state
@@ -51,8 +56,10 @@ petición: { tarea : "blablabla" }
 respuesta: { id }
 
 DELETE /api-todo/borrar/:id 
+respuesta: {ressultado :ok|ko}
 
 PUT /api-todo/actualizar/:id/:operacion
+respuesta: {ressultado :ok|ko}
 
 operación 1 --> editar texto --> petición: { tarea : "blablabla" }
 operación 2 ---> toggle estado

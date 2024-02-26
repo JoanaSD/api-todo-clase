@@ -68,11 +68,11 @@ servidor.put("/api-todo/actualizar/:id([0-9]+)/:operacion(1|2)", async (peticion
 servidor.delete("/api-todo/borrar/:id([0-9]+)", async (peticion,respuesta) => {
     try{
         let cantidad = await borrarTarea(peticion.params.id);
-        return respuesta.json({ resultado : cantidad ? "ok" : "ko" });
+        respuesta.json({ resultado : cantidad ? "ok" : "ko" });
 
     }catch(error){
         respuesta.status(500);
-        return respuesta.json(error);
+        respuesta.json(error);
     }
 });
 

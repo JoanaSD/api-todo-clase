@@ -96,7 +96,7 @@ function actualizarTexto(id,tarea){
         let conexion = conectar();
 
         try{
-            let {count} = await conexion `UPDATE tareas SET tarea = NOT tarea = ${tarea} WHERE id = ${id}`;
+            let {count} = await conexion `UPDATE tareas SET tarea = ${tarea} WHERE id = ${id}`;
             conexion.end();
             fulfill(count);
 
